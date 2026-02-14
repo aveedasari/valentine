@@ -27,7 +27,7 @@
     }
 
     p {
-      margin: 5px 0;
+      margin: 6px 0;
     }
 
     button {
@@ -57,31 +57,31 @@
 </audio>
 
 <div class="card">
-  <h1>Hey Akshh 💕</h1>
+  <h1>Akshhh 💕</h1>
   <p>Will you be my Valentine?</p>
   <p style="font-size:13px;color:gray;">
     choose wisely AK…<br>
-    (the NO button is not in the mood *-*)
+    (dont tap NO button...*-*)
   </p>
 
   <p id="noMessage" style="color:#c40000;font-weight:bold;"></p>
 
   <button class="yes" onclick="sayYes()">Yes</button>
-  <button class="no" onmouseoverclick="moveNo()">No</button>
+  <button class="no" onclick="sayNo()">No</button>
 </div>
 
 <script>
 let noMessages = [
-  "Don't do this to me babe 🥺",
-  "Please nooo akki 😭",
+  "Don't do this to me 🥺",
+  "Please nooo 😭",
   "This could be a mistake 😩",
-  "Baby nooo 💔",
-  "Think again AK😏"
+  "Akshh nooo 💔",
+  "Think again 😏"
 ];
 
 let noIndex = 0;
 
-function moveNo() {
+function sayNo() {
   document.getElementById("noMessage").innerText = noMessages[noIndex];
   noIndex = (noIndex + 1) % noMessages.length;
 }
@@ -94,7 +94,7 @@ function sayYes() {
 
   document.querySelector(".card").innerHTML = `
       <h1 style="font-size:30px;">Best decision ever AK 😌</h1>
-      <p style="font-size:20px;">I love youuu babyyyy❤️</p>
+      <p style="font-size:20px;">I love youuu ❤️</p>
   `;
 }
 </script>
