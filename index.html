@@ -41,7 +41,7 @@
 
     .yes {
       background: #ff4d6d;
-      color: white;
+      color: red;
     }
 
     .no {
@@ -57,36 +57,33 @@
 </audio>
 
 <div class="card">
-  <h1>Akshhhh💕</h1>
+  <h1>Hey Akshh 💕</h1>
   <p>Will you be my Valentine?</p>
   <p style="font-size:13px;color:gray;">
     choose wisely AK…<br>
-    (the NO button is a little shy 😳)
+    (the NO button is not in the mood *-*)
   </p>
 
   <p id="noMessage" style="color:#c40000;font-weight:bold;"></p>
 
   <button class="yes" onclick="sayYes()">Yes</button>
-  <button class="no" onmouseover="moveNo()">No</button>
+  <button class="no" onmouseoverclick="moveNo()">No</button>
 </div>
 
 <script>
 let noMessages = [
-  "Don't do this to me 🥺",
-  "Please akki nooo 😭",
+  "Don't do this to me babe 🥺",
+  "Please nooo akki 😭",
   "This could be a mistake 😩",
   "Baby nooo 💔",
-  "Think again 😏"
-  "i hate you",
+  "Think again AK😏"
 ];
 
 let noIndex = 0;
 
 function moveNo() {
-  const button = document.querySelector(".no");
-  button.style.position = "absolute";
-  button.style.left = Math.random() * 80 + "%";
-  button.style.top = Math.random() * 80 + "%";
+  document.getElementById("noMessage").innerText = noMessages[noIndex];
+  noIndex = (noIndex + 1) % noMessages.length;
 }
 
 function sayYes() {
@@ -96,8 +93,8 @@ function sayYes() {
   document.body.style.background = "url('love.jpg') no-repeat center center/cover";
 
   document.querySelector(".card").innerHTML = `
-      <h1 style="font-size:30px;">this is Best decision my dear 😌</h1>
-      <p style="font-size:20px;">I love youuu akkiii ❤️</p>
+      <h1 style="font-size:30px;">Best decision ever AK 😌</h1>
+      <p style="font-size:20px;">I love youuu babyyyy❤️</p>
   `;
 }
 </script>
