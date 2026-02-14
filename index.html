@@ -87,11 +87,14 @@ function sayNo() {
 }
 
 function sayYes() {
+  function sayYes() {
   const song = document.getElementById("loveSong");
   song.play();
 
+  // Change background to new photo
   document.body.style.background = "url('love.jpg') no-repeat center center/cover";
 
+  // Change box content
   document.querySelector(".card").innerHTML = `
       <h1 style="font-size:30px;">Best decision ever AK 😌</h1>
       <p style="font-size:20px;">I love youuu ❤️</p>
