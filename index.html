@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Will You Be My Valentine? ❤️</title>
+  <style>
+    body {
+      background: #c40000; /* RED background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .bear {
+      font-size: 60px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #eee;
+      position: absolute;
+    }
+
+    .small-text {
+      font-size: 12px;
+      margin-top: 10px;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="bear">🐻❤️</div>
+  <h1>YOUR_BOY_NAME will you be my valentine?</h1>
+
+  <div class="buttons">
+    <button class="yes" onclick="love()">Yes</button>
+    <button class="no" onmouseover="moveButton()">No</button>
+  </div>
+
+  <div class="small-text">"No" seems a bit shy 🙈</div>
+</div>
+
+<script>
+function moveButton() {
+  const button = document.querySelector(".no");
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  button.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function love() {
+  document.body.innerHTML = `
+    <div style="color:white;text-align:center;">
+      <h1 style="font-size:50px;">YAYYYY ❤️❤️❤️</h1>
+      <p style="font-size:25px;">I love you forever 😘</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
