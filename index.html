@@ -74,17 +74,16 @@ function moveButton() {
   const y = Math.random() * 200 - 100;
   button.style.transform = `translate(${x}px, ${y}px)`;
 }
+  function love() {
+  const song = document.getElementById("loveSong");
+  song.play();
 
-function love() {
-  document.body.innerHTML = `
-    <div style="color:white;text-align:center;">
-      <h1 style="font-size:50px;">YAYYYY ❤️</h1>
-      <p style="font-size:25px;">I love you so much akkiluuu😘</p>
-    </div>
+  document.querySelector(".card").innerHTML = `
+      <h1 style="font-size:40px;">YAYYYY ❤️</h1>
+      <p style="font-size:22px;">I love you so much 😘</p>
   `;
-
-  document.getElementById("loveSong").play();
 }
+
 </script>
 
 </body>
