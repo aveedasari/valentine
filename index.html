@@ -79,18 +79,14 @@ let noMessages = [
   "Think again 😏"
   "i hate you",
 ];
+
+let noIndex = 0;
+
 function moveNo() {
   const button = document.querySelector(".no");
   button.style.position = "absolute";
   button.style.left = Math.random() * 80 + "%";
   button.style.top = Math.random() * 80 + "%";
-}
-
-let noIndex = 0;
-
-function sayNo() {
-  document.getElementById("noMessage").innerText = noMessages[noIndex];
-  noIndex = (noIndex + 1) % noMessages.length;
 }
 
 function sayYes() {
