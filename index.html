@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> akshh, Will You Be My Valentine? ❤️</title>
+  <title>For My Love ❤️</title>
   <style>
     body {
-      background: #c40000;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
       font-family: Arial, sans-serif;
+      background: url("bg.jpg") no-repeat center center/cover;
+      overflow: hidden;
     }
 
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.9);
       padding: 40px;
       border-radius: 20px;
       text-align: center;
       width: 350px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    h1 {
-      font-size: 22px;
-      margin: 20px 0;
-    }
-
-    .buttons {
-      margin-top: 20px;
-      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 2;
     }
 
     button {
@@ -48,42 +40,57 @@
 
     .no {
       background: #eee;
-      position: absolute;
+      position: relative;
     }
 
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
   </style>
 </head>
 
 <body>
 
+<!-- 🎵 Your Song -->
+<audio id="loveSong" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
 <div class="card">
-  <h1>akshh, Will you be my Valentine? ❤️</h1>
-
-  <div class="buttons">
-    <button class="yes" onclick="love()">Yes</button>
-    <button class="no" onmouseover="moveButton()">No</button>
-  </div>
+  <h1>akshh,Will you be my Valentine?❤️</h1>
+  <button class="yes" onclick="showSurprise()">Yes</button>
+  <button class="no" onmouseover="moveButton()">No</button>
 </div>
-
-<audio id="loveSong" src="song.mpeg"></audio>
 
 <script>
 function moveButton() {
   const button = document.querySelector(".no");
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
-  button.style.transform = `translate(${x}px, ${y}px)`;
+  button.style.position = "absolute";
+  button.style.left = Math.random() * 300 + "px";
+  button.style.top = Math.random() * 300 + "px";
 }
-  function love() {
+
+function showSurprise() {
   const song = document.getElementById("loveSong");
   song.play();
 
-  document.querySelector(".card").innerHTML = `
-      <h1 style="font-size:40px;">YAYYYY ❤️</h1>
-      <p style="font-size:22px;">I love you so much 😘</p>
+  document.body.innerHTML += `
+    <video autoplay muted loop>
+      <source src="love.mp4" type="video/mp4">
+    </video>
+    <div style="position:fixed;top:40%;width:100%;text-align:center;color:white;">
+      <h1 style="font-size:50px;">I LOVE YOU akkiii❤️</h1>
+    </div>
   `;
-}
 
+  document.querySelector(".card").style.display = "none";
+}
 </script>
 
 </body>
