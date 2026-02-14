@@ -67,7 +67,7 @@
   <p id="noMessage" style="color:#c40000;font-weight:bold;"></p>
 
   <button class="yes" onclick="sayYes()">Yes</button>
-  <button class="no" onmouseover="sayNo()">No</button>
+  <button class="no" onmouseover="moveNo()">No</button>
 </div>
 
 <script>
@@ -79,6 +79,12 @@ let noMessages = [
   "Think again 😏"
   "i hate you",
 ];
+function moveNo() {
+  const button = document.querySelector(".no");
+  button.style.position = "absolute";
+  button.style.left = Math.random() * 80 + "%";
+  button.style.top = Math.random() * 80 + "%";
+}
 
 let noIndex = 0;
 
