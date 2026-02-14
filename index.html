@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Will You Be My Valentine? ❤️</title>
+  <title> akshh, Will You Be My Valentine? ❤️</title>
   <style>
     body {
-      background: #c40000; /* RED background */
+      background: #c40000;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,10 +20,6 @@
       text-align: center;
       width: 350px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    .bear {
-      font-size: 60px;
     }
 
     h1 {
@@ -55,27 +51,21 @@
       position: absolute;
     }
 
-    .small-text {
-      font-size: 12px;
-      margin-top: 10px;
-      color: gray;
-    }
   </style>
 </head>
 
 <body>
 
 <div class="card">
-  <div class="bear">🐻❤️</div>
-  <h1>AKSHHH will you be my valentine?</h1>
+  <h1>akshh, Will you be my Valentine? ❤️</h1>
 
   <div class="buttons">
     <button class="yes" onclick="love()">Yes</button>
     <button class="no" onmouseover="moveButton()">No</button>
   </div>
-
-  <div class="small-text">"No" seems a bit shy 🙈</div>
 </div>
+
+<audio id="loveSong" src="song.mpeg"></audio>
 
 <script>
 function moveButton() {
@@ -88,10 +78,12 @@ function moveButton() {
 function love() {
   document.body.innerHTML = `
     <div style="color:white;text-align:center;">
-      <h1 style="font-size:50px;">YAYYYY ❤️❤️❤️</h1>
-      <p style="font-size:25px;">I love you akkiii😘</p>
+      <h1 style="font-size:50px;">YAYYYY ❤️</h1>
+      <p style="font-size:25px;">I love you so much akkiluuu😘</p>
     </div>
   `;
+
+  document.getElementById("loveSong").play();
 }
 </script>
 
