@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>For My Love ❤️</title>
+
   <style>
     body {
       margin: 0;
@@ -11,6 +12,7 @@
       align-items: center;
       font-family: Arial, sans-serif;
       background: url("bg.jpg") no-repeat center center/cover;
+      overflow: hidden;
     }
 
     .card {
@@ -20,6 +22,8 @@
       text-align: center;
       width: 350px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
@@ -27,7 +31,7 @@
     }
 
     p {
-      margin: 6px 0;
+      margin: 5px 0;
     }
 
     button {
@@ -37,6 +41,7 @@
       font-size: 16px;
       cursor: pointer;
       margin: 10px;
+      transition: 0.3s;
     }
 
     .yes {
@@ -44,30 +49,42 @@
       color: white;
     }
 
+    .yes:hover {
+      transform: scale(1.1);
+    }
+
     .no {
       background: #eee;
+      position: relative;
+    }
+
+    #noMessage {
+      color: #c40000;
+      font-weight: bold;
+      min-height: 20px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- 🎵 Your Song -->
 <audio id="loveSong" loop>
   <source src="song.mpeg" type="audio/mpeg">
 </audio>
 
 <div class="card">
-  <h1>Akshhh 💕</h1>
+  <h1>Hey Akki 💕</h1>
   <p>Will you be my Valentine?</p>
   <p style="font-size:13px;color:gray;">
-    choose wisely AK…<br>
-    (dont tap NO button...*-*)
+    choose wisely…<br>
+    (the NO button is a little shy 😳)
   </p>
 
-  <p id="noMessage" style="color:#c40000;font-weight:bold;"></p>
+  <p id="noMessage"></p>
 
   <button class="yes" onclick="sayYes()">Yes</button>
-  <button class="no" onclick="sayNo()">No</button>
+  <button class="no" onmouseover="moveNo()" onclick="sayNo()">No</button>
 </div>
 
 <script>
@@ -75,8 +92,8 @@ let noMessages = [
   "Don't do this to me 🥺",
   "Please nooo 😭",
   "This could be a mistake 😩",
-  "Akshh nooo 💔",
-  "Think again 😏"
+  "Baby nooo 💔",
+  "Think again AK 😏"
 ];
 
 let noIndex = 0;
@@ -86,15 +103,21 @@ function sayNo() {
   noIndex = (noIndex + 1) % noMessages.length;
 }
 
+function moveNo() {
+  const button = document.querySelector(".no");
+  button.style.position = "absolute";
+  button.style.left = Math.random() * 80 + "%";
+  button.style.top = Math.random() * 80 + "%";
+}
+
 function sayYes() {
-  function sayYes() {
   const song = document.getElementById("loveSong");
   song.play();
 
-  // Change background to new photo
+  // Change background to second photo
   document.body.style.background = "url('love.jpg') no-repeat center center/cover";
 
-  // Change box content
+  // Update message
   document.querySelector(".card").innerHTML = `
       <h1 style="font-size:30px;">Best decision ever AK 😌</h1>
       <p style="font-size:20px;">I love youuu ❤️</p>
